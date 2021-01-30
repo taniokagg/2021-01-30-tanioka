@@ -1,12 +1,15 @@
 <template>
   <div class="home flex">
-    <Card v-for="(data, index) in lists" :key="index" :city="data.city" />
+    <Card v-for="(data, index) in lists" :key="index" :city="data.city"/>
   </div>
 </template>
 
 <script>
 import Card from "../components/Card";
 export default {
+  components: {
+    Card
+  },
   data() {
     return {
       lists: [
@@ -30,20 +33,18 @@ export default {
         }
       ]
     };
-  },
-  components: {
-    Card
   }
 };
 </script>
 
 <style scoped>
-body {
+.body {
   background: #eee;
 }
 .flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
+
 </style>
